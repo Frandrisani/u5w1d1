@@ -11,6 +11,12 @@ public class esercizio1 {
         System.out.println("La stringa concatenata è: " + risultatoConcatenazione);
 
         System.out.println("Esercizio 1c");
+        String[] array = {"Elemento 1", "Elemento 2", "Elemento 3", "Elemento 4", "Elemento 5"};
+        String g = "Elemento 6";
+        String[] nuovoArray = inserisciInArray(array, g);
+        for (int i = 0; i < nuovoArray.length; i++) {
+            System.out.println("Elemento " + (i + 1) + ": " + nuovoArray[i]);
+        }
     }
 
 
@@ -23,8 +29,19 @@ public class esercizio1 {
         return x + y;
     }
 
-    public static String inserisciInArray(String[] x, String y) {
-        return x + y;
+    public static String[] inserisciInArray(String[] x, String y) {
+        String[] arrayDiStringhe = new String[6];
+        for (int i = 0; i < 3; i++) {
+            arrayDiStringhe[i] = x[i];
+        }
+
+        arrayDiStringhe[3] = y;
+
+        for (int i = 4; i < arrayDiStringhe.length; i++) {
+            arrayDiStringhe[i] = x[i-1];
+        }
+
+        return arrayDiStringhe;
     }
 
 
